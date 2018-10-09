@@ -1,6 +1,6 @@
 pipeline {
-   agent any
-     stages {
+    agent any
+    stages {
         stage('Build') {
             steps {
                 echo 'Running build automation'
@@ -8,7 +8,7 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
-      stage('DeployToStaging') {
+        stage('DeployToStaging') {
             when {
                 branch 'master'
             }
